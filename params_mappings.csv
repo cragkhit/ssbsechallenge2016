@@ -1,26 +1,26 @@
-tool,param,real_param_name
-ccfx,c1,b
-ccfx,c2,t
-deckard,d1,MINTOKEN
-deckard,d2,STRIDE
-deckard,d3,SIMILARITY
-nicad,n1,minsize
-nicad,n2,maxsize
-nicad,n3,threshold
-nicad,n4,renaming
-nicad,n5,abstract
-simian,s1,ignoreCurlyBraces
-simian,s2,ignoreIdentifiers
-simian,s3,ignoreIdentifierCase
-simian,s4,ignoreStrings
-simian,s5,ignoreStringCase
-simian,s6,ignoreNumbers
-simian,s7,ignoreCharacters
-simian,s8,ignoreCharacterCase
-simian,s9,ignoreLiterals
-simian,s10,ignoreSubtypeNames
-simian,s11,ignoreModifiers
-simian,s12,ignoreVariableNames
-simian,s13,balanceParentheses
-simian,s14,balanceSquareBrackets 
-simian,s15,threshold
+tool,param,real_param_name,descriptions
+ccfx,c1,b,minimum clone size (in tokens)
+ccfx,c2,t,minimum number of unique tokens
+deckard,d1,MINTOKEN,minimal number of tokens required for clones
+deckard,d2,STRIDE,size of the sliding window
+deckard,d3,SIMILARITY,minimum similarity of being clones
+nicad,n1,minsize,minimum clone lines in pretty-printed lines
+nicad,n2,maxsize,maximum clone lines in pretty-printed lines
+nicad,n3,UPI,maximum near-miss difference threshold
+nicad,n4,renaming,kind of renaming to be applied (0=none/1=blind)
+nicad,n5,abstract,kind of abstraction to be applied (0=none/1=block/2=declaration/3=statement/4=expression/5=condition/6=literal)
+simian,s1,ignoreCurlyBraces,curly braces are ignored
+simian,s2,ignoreIdentifiers,completely ignores all identfiers
+simian,s3,ignoreIdentifierCase,matches identifiers irrespective of case. Eg. MyVariableName and myvariablename would both match
+simian,s4,ignoreStrings,MyVariable and myvariablewould both match
+simian,s5,ignoreStringCase,'Hello World' and 'HELLO WORLD' would both match
+simian,s6,ignoreNumbers,int x = 1; and int x = 576; would both match
+simian,s7,ignoreCharacters,'A' and 'Z' would both match
+simian,s8,ignoreCharacterCase,'A' and 'a' would both match
+simian,s9,ignoreLiterals,"A'; "one; and 27.8 would all match
+simian,s10,ignoreSubtypeNames,BufferedReader; StringReader; and Reader would all match
+simian,s11,ignoreModifiers,public; protected; static are matched
+simian,s12,ignoreVariableNames,Completely ignores variable names (field/parameter/local). Eg. int foo = 1; and int bar = 1 would both match
+simian,s13,balanceParentheses,Ensures that expressions inside parenthesis that are split across multiple physical lines are considered as one
+simian,s14,balanceSquareBrackets,Ensures that expressions inside curly braces that are split across multiple physical lines are considered as one
+simian,s15,threshold,Matches will contain at least the specified number of lines
